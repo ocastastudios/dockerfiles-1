@@ -4,6 +4,7 @@ set -e
 : ${MMS_SERVER:=https://mms.mongodb.com}
 : ${MMS_MUNIN:=true}
 : ${MMS_CHECK_SSL_CERTS:=true}
+: ${MMS_SSL:=false}
 
 if [ ! "$MMS_API_KEY" ]; then
 	{
@@ -34,6 +35,7 @@ set_config mmsApiKey "$MMS_API_KEY"
 set_config mmsBaseUrl "$MMS_SERVER"
 set_config enableMunin "$MMS_MUNIN"
 set_config sslRequireValidServerCertificates "$MMS_CHECK_SSL_CERTS"
+set_config useSslForAllConnections "$MMS_SSL"
 
 cat "$config_tmp" > /etc/mongodb-mms/backup-agent.config
 rm "$config_tmp"
