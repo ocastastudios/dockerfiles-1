@@ -10,10 +10,11 @@ if [ ! "$MMS_API_KEY" ]; then
 		echo '(see https://mms.mongodb.com/settings/monitoring-agent for your mmsApiKey)'
 		echo
 		echo 'Other optional variables:'
-		echo ' - MMS_SERVER='"$MMS_SERVER"
-		echo ' - MMS_MUNIN='"$MMS_MUNIN"
-		echo ' - MMS_CHECK_SSL_CERTS='"$MMS_CHECK_SSL_CERTS"
-        echo ' - MMS_SSL='"$MMS_SSL"
+		echo ' - MMS_SERVER'
+		echo ' - MMS_MUNIN'
+		echo ' - MMS_CHECK_SSL_CERTS'
+        echo ' - MMS_SSL'
+        echo ' - MMS_CA_FILE'
 	} >&2
 	exit 1
 fi
@@ -48,7 +49,6 @@ if [ "$MMS_CLIENT_CERT" ]; then
     set_config sslClientCertificate "$MMS_CLIENT_CERT"
 fi
 cat "$config_tmp" > /etc/mongodb-mms/monitoring-agent.config
-cat $config_tmp
 rm "$config_tmp"
 
 exec "$@"

@@ -1,5 +1,5 @@
 FROM centos:centos7
-MAINTAINER Mikkel Christiansen <mikkel@rheosystems.com>
+MAINTAINER Martin Higham <martin@ocasta.com>
 
 RUN yum install logrotate -y && yum clean all
 
