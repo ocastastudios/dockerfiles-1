@@ -19,6 +19,7 @@ Environment Variables
 |  Name  | Config Variable it sets |
 |--------|-------------------------|
 | MMS_API_KEY | mmsApiKey |
+| MMS_GROUP_ID | mmsGroupId |
 | MMS_SERVER | mmsBaseUrl |
 | MMS_MUNIN | enableMunin |
 | MMS_CA_FILE | sslTrustedServerCertificates |
