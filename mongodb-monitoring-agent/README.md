@@ -11,7 +11,7 @@ Usage
 -----
 The following docker command will start the monitoring service.
 
-`docker run -d -e MMS_API_KEY={YOUR_API_KEY} ocasta/mongodb-mms`
+`docker run -d -e MMS_GROUP_ID={YOUR_GROUP_ID} -e MMS_API_KEY={YOUR_API_KEY} ocasta/mongodb-mms`
 
 Environment Variables
 -----

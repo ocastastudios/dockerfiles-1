@@ -9,7 +9,7 @@ Usage
 -----
 The following docker command will start the monitoring service.
 
-`docker run -d -e MMS_API_KEY={YOUR_API_KEY} ocasta/mongodb-mms`
+`docker run -d -e MMS_GROUP_ID={YOUR_GROUP_ID} -e MMS_API_KEY={YOUR_API_KEY} ocasta/mongodb-mms-backup`
 
 Environment Variables
 -----
@@ -17,6 +17,7 @@ Environment Variables
 |  Name  | Config Variable it sets |
 |--------|-------------------------|
 | MMS_API_KEY | mmsApiKey |
+| MMS_GROUP_ID | mmsGroupId |
 | MMS_SERVER | mmsBaseUrl |
 | MMS_MUNIN | enableMunin |
 | MMS_CA_FILE | sslTrustedServerCertificates |

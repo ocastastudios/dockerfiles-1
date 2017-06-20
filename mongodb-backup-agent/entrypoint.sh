@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e
 
-if [ ! "$MMS_API_KEY" ]; then
+if [ ! "$MMS_API_KEY" ] || [ ! "$MMS_GROUP_ID" ]; then
 	{
-		echo 'error: MMS_API_KEY was not specified'
-		echo 'try something like: docker run -e MMS_API_KEY=... ...'
-		echo '(see https://mms.mongodb.com/settings/backup-agent for your mmsApiKey)'
+		echo 'error: MMS_API_KEY and MMS_GROUP_ID must be specified'
+		echo 'try something like: docker run -e MMS_GROUP_ID=... -e MMS_API_KEY=... ...'
+		echo '(see https://mms.mongodb.com/settings/monitoring-agent for your mmsApiKey)'
 		echo
 		echo 'Other optional variables:'
 		echo ' - MMS_SERVER'
@@ -29,6 +29,7 @@ set_config() {
 }
 
 set_config mmsApiKey "$MMS_API_KEY"
+set_config mmsGroupId "$MMS_GROUP_ID"
 if [ "$MMS_SERVER" ]; then
     set_config mmsBaseUrl "$MMS_SERVER"
 fi
